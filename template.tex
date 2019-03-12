@@ -1,163 +1,160 @@
 \documentclass[a4paper,spanish,12pt]{report}
-  % pre\'ambulo
 
-  \usepackage{lmodern}
-  \usepackage[T1]{fontenc}
-  \usepackage[spanish,activeacute]{babel}
-  \usepackage[utf8]{inputenc}
-  \usepackage{mathtools}
-  \usepackage[left=2.5cm,top=2.5cm,right=2.5cm,bottom=2.5cm]{geometry}
-  \usepackage{relsize}
-  \usepackage{float}
-  \usepackage{listings}
-  \usepackage{color}
-  \usepackage{enumitem}
-  \usepackage{blindtext}
-  \usepackage{amsmath}
-  \usepackage{fixltx2e}
-  \usepackage[]{hyperref}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,activeacute]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage[left=2.5cm,top=2.5cm,right=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{relsize}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{blindtext}
+\usepackage{amsmath}
+\usepackage{fixltx2e}
+\usepackage[]{hyperref}
 
-  % Define vars
-  \newcommand{\textitle}{Título de la memoria}
-  \newcommand{\texsubject}{Asignatura de ejemplo}
-  \newcommand{\texyear}{2018/19}
-  \newcommand{\texmonth}{Enero}
-  \newcommand{\texdate}{1 de Enero del 2019}
-  \newcommand{\texgroup}{Grupo 3.x}
+\selectlanguage{spanish}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
 
-  \hypersetup{
-    pdftitle={\textitle}
-    pdfauthor={Marta Ortega Soto y Pedro Javier Nicol\'as Zamora},
-    pdfsubject={documentation},
-    bookmarksnumbered=true,
-    bookmarksopen=true,
-    bookmarksopenlevel=1,
-    colorlinks=true,
-    pdfstartview=Fit,
-    pdfpagemode=UseOutlines,
-    pdfpagelayout=TwoPageRight
-  }
+% Define vars
+\newcommand{\textitle}{Título de la memoria}
+\newcommand{\texsubject}{Asignatura de ejemplo}
+\newcommand{\texyear}{2018/19}
+\newcommand{\texmonth}{Enero}
+\newcommand{\texdate}{1 de Enero del 2019}
+\newcommand{\texgroup}{Grupo 3.x}
 
-  % Code break page
-  \newcommand{\cbp}[3]{\lstinputlisting[firstline=#2, lastline=#3, firstnumber=#2]{#1}}
-  %\cbp{FILE}{FIRSTLINE}{LASTLINE}
+\hypersetup{
+  pdftitle={\textitle}
+  pdfauthor={Pedro Javier Nicol\'as Zamora},
+  pdfsubject={documentation},
+  bookmarksnumbered=true,
+  bookmarksopen=true,
+  bookmarksopenlevel=1,
+  colorlinks=true,
+  pdfstartview=Fit,
+  pdfpagemode=UseOutlines,
+  pdfpagelayout=TwoPageRight
+}
 
-
-  \selectlanguage{spanish}
-
-  \newcommand{\tab}[1]{\hspace{.03\textwidth}\rlap{#1}}
-
-  \definecolor{gray}{rgb}{0.5,0.5,0.5}
-
-  \lstset{
-    frame=single,
-    extendedchars=true,
-    tabsize=4,
-    breaklines=true,
-    postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}},
-    % SQL
-    % morekeywords={SELECT, FROM, WHERE, LEFT, RIGHT, JOIN, UNION, MINUS, HAVING, ORDER, BY, CASE, NOT, IN, AND, OR, NULL, GROUP, AS, ON, IS, Clave, ajena, primaria, Admiten, nulos, Derivados, CREATE, TABLE, ASSERTION, CONSTRAINT, CHECK, DELETE, CASCADE, PRIMARY, KEY, UNIQUE, INSERT, INTO, VALUES, COMMENT, COLUMN, VIEW, SET, ALTER, ROLLBACK, DROP, UPDATE, REFERENCES, FOREIGN},
-    % C++
-    % morekeywords={return, include, if, for, while}
-    morekeywords={return, include, if, for, while}
-    numbers=left,
-    basicstyle=\footnotesize,
-    numberstyle=\tiny\color{gray}
-  }
-
-  \makeatletter
-  \def\@makechapterhead#1{%
-    \vspace*{50\p@}%
-    {\parindent \z@ \raggedright \normalfont
-      \interlinepenalty\@M
-      \Huge\bfseries  \thechapter.\quad #1\par\nobreak
-      \vskip 40\p@
-    }}
-  \makeatother
-
-  \title{\textitle}
-  \author{Pedro Javier Nicol\'as Zamora}
-
-  \begin{document}
-  % cuerpo del documento
-
-  \begin{titlepage}
-  \begin{center}
-  \begin{figure}[htb]
-  \end{figure}
-  \begin{Huge}
-  \textbf{Universidad de Murcia}\\
-  \end{Huge}
-  \begin{huge}
-  \vspace{0.1cm}
-  \texsubject \\
-  \end{huge}
-  \begin{LARGE}
-  Curso \texyear\ - Convocatoria de \texmonth \\
-  \end{LARGE}
-  \vspace*{2cm}
-  \begin{Huge}
-  \textbf{\textitle} \\
-  \end{Huge}
-  \vspace*{10cm}
-  \rule{80mm}{0.1mm}\\
-  \vspace*{0.5cm}
-  \begin{Large}
-  % \ \ \ \ Marta Ortega Soto\ \ \ \ \ \ Pedro Javier Nicolás Zamora\\
-  % 23314500\textit{K}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 49224983\textit{S}\ \ \ \ \\
-  % marta.ortega3@um.es\ \ \ \ \ \ pedrojavier.nicolas@um.es\\
-
-  % Me
-  Pedro Javier Nicolás Zamora\\
-  49224983\textit{S}\ \ \ \ \\
-  pedrojavier.nicolas@um.es\\
-
-  \vspace*{0.5cm}
-  \texgroup \\
-  \texdate \\
-  \end{Large}
-  \end{center}
-  \end{titlepage}
-
-  \setcounter{page}{2}
-
-  \tableofcontents
-  \pagebreak
-
-  %\listoffigures
-  %\pagebreak
-
-  % Tags:
-  %\chapter{Chapter}
-  %\section{Section}
-  %\subsection{Subsection}
-
-  % Insert image:
-  %\begin{figure}[H]
-    %\begin{center}
-      %\includegraphics[width=0.5\textwidth]{img/av-tabla-contraste.png}
-    %\end{center}
-    %\caption{Algoritmo Voraz. Tabla de tiempos de ejecución contraste de estudio teórico y experimental.}
-  %\end{figure}
-
-  % Insert code #1:
-  %\begin{figure}[H]
-  %\lstinputlisting{psc/705/AlgoritmoVoraz.psc}
-  %\caption{Pseudocódigo Algoritmo Voraz.}
-  %\end{figure}
-
-  % Insert code #2:
-  % \begin{figure}[H]
-  % \cbp{src/P2.sql}{1}{35}
-  % \caption{Creación de la base de datos (Parte 1)}
-  % \end{figure}
-
-  \chapter{Chapter}
-  \section{Section}
-  \subsection{Subsection}
-
-  Hello world!
+% Code break page
+\newcommand{\cbp}[3]{\lstinputlisting[firstline=#2, lastline=#3, firstnumber=#2]{#1}}
+%\cbp{FILE}{FIRSTLINE}{LASTLINE}
 
 
 
-  \end{document}
+\lstset{
+  frame=single,
+  extendedchars=true,
+  tabsize=4,
+  breaklines=true,
+  postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}},
+  % SQL
+  % morekeywords={SELECT, FROM, WHERE, LEFT, RIGHT, JOIN, UNION, MINUS, HAVING, ORDER, BY, CASE, NOT, IN, AND, OR, NULL, GROUP, AS, ON, IS, Clave, ajena, primaria, Admiten, nulos, Derivados, CREATE, TABLE, ASSERTION, CONSTRAINT, CHECK, DELETE, CASCADE, PRIMARY, KEY, UNIQUE, INSERT, INTO, VALUES, COMMENT, COLUMN, VIEW, SET, ALTER, ROLLBACK, DROP, UPDATE, REFERENCES, FOREIGN},
+  % C++
+  % morekeywords={return, include, if, for, while}
+  morekeywords={return, include, if, for, while}
+  numbers=left,
+  basicstyle=\footnotesize,
+  numberstyle=\tiny\color{gray}
+}
+
+\makeatletter
+\def\@makechapterhead#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    \interlinepenalty\@M
+    \Huge\bfseries  \thechapter.\quad #1\par\nobreak
+    \vskip 40\p@
+  }}
+\makeatother
+
+\title{\textitle}
+\author{Pedro Javier Nicol\'as Zamora}
+
+\begin{document}
+% cuerpo del documento
+
+\begin{titlepage}
+\begin{center}
+\begin{figure}[htb]
+\end{figure}
+\begin{Huge}
+\textbf{Universidad de Murcia}\\
+\end{Huge}
+\begin{huge}
+\vspace{0.1cm}
+\texsubject \\
+\end{huge}
+\begin{LARGE}
+Curso \texyear\ - Convocatoria de \texmonth \\
+\end{LARGE}
+\vspace*{2cm}
+\begin{Huge}
+\textbf{\textitle} \\
+\end{Huge}
+\vspace*{10cm}
+\rule{80mm}{0.1mm}\\
+\vspace*{0.5cm}
+\begin{Large}
+% \ \ \ \ Marta Ortega Soto\ \ \ \ \ \ Pedro Javier Nicolás Zamora\\
+% 23314500\textit{K}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 49224983\textit{S}\ \ \ \ \\
+% marta.ortega3@um.es\ \ \ \ \ \ pedrojavier.nicolas@um.es\\
+
+% Me
+Pedro Javier Nicolás Zamora\\
+49224983\textit{S}\ \ \ \ \\
+pedrojavier.nicolas@um.es\\
+
+\vspace*{0.5cm}
+\texgroup \\
+\texdate \\
+\end{Large}
+\end{center}
+\end{titlepage}
+
+\setcounter{page}{2}
+
+\tableofcontents
+\pagebreak
+
+%\listoffigures
+%\pagebreak
+
+% Tags:
+%\chapter{Chapter}
+%\section{Section}
+%\subsection{Subsection}
+
+% Insert image:
+%\begin{figure}[H]
+  %\begin{center}
+    %\includegraphics[width=0.5\textwidth]{img/av-tabla-contraste.png}
+  %\end{center}
+  %\caption{Algoritmo Voraz. Tabla de tiempos de ejecución contraste de estudio teórico y experimental.}
+%\end{figure}
+
+% Insert code #1:
+%\begin{figure}[H]
+%\lstinputlisting{psc/705/AlgoritmoVoraz.psc}
+%\caption{Pseudocódigo Algoritmo Voraz.}
+%\end{figure}
+
+% Insert code #2:
+% \begin{figure}[H]
+% \cbp{src/P2.sql}{1}{35}
+% \caption{Creación de la base de datos (Parte 1)}
+% \end{figure}
+
+\chapter{Chapter}
+\section{Section}
+\subsection{Subsection}
+
+Hello world!
+
+
+
+\end{document}
