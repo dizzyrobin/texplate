@@ -40,11 +40,8 @@
   pdfpagelayout=TwoPageRight
 }
 
-% Code break page
 \newcommand{\cbp}[3]{\lstinputlisting[firstline=#2, lastline=#3, firstnumber=#2]{#1}}
 %\cbp{FILE}{FIRSTLINE}{LASTLINE}
-
-
 
 \lstset{
   frame=single,
@@ -52,11 +49,6 @@
   tabsize=4,
   breaklines=true,
   postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}},
-  % SQL
-  % morekeywords={SELECT, FROM, WHERE, LEFT, RIGHT, JOIN, UNION, MINUS, HAVING, ORDER, BY, CASE, NOT, IN, AND, OR, NULL, GROUP, AS, ON, IS, Clave, ajena, primaria, Admiten, nulos, Derivados, CREATE, TABLE, ASSERTION, CONSTRAINT, CHECK, DELETE, CASCADE, PRIMARY, KEY, UNIQUE, INSERT, INTO, VALUES, COMMENT, COLUMN, VIEW, SET, ALTER, ROLLBACK, DROP, UPDATE, REFERENCES, FOREIGN},
-  % C++
-  % morekeywords={return, include, if, for, while}
-  morekeywords={return, include, if, for, while}
   numbers=left,
   basicstyle=\footnotesize,
   numberstyle=\tiny\color{gray}
@@ -100,11 +92,8 @@ Curso \texyear\ - Convocatoria de \texmonth \\
 \rule{80mm}{0.1mm}\\
 \vspace*{0.5cm}
 \begin{Large}
-% \ \ \ \ Marta Ortega Soto\ \ \ \ \ \ Pedro Javier Nicolás Zamora\\
-% 23314500\textit{K}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 49224983\textit{S}\ \ \ \ \\
-% marta.ortega3@um.es\ \ \ \ \ \ pedrojavier.nicolas@um.es\\
 
-% Me
+  % Me
 Pedro Javier Nicolás Zamora\\
 49224983\textit{S}\ \ \ \ \\
 pedrojavier.nicolas@um.es\\
@@ -124,29 +113,25 @@ pedrojavier.nicolas@um.es\\
 %\listoffigures
 %\pagebreak
 
-% Tags:
-%\chapter{Chapter}
-%\section{Section}
-%\subsection{Subsection}
 
-% Insert image:
+% How to insert an image:
 %\begin{figure}[H]
   %\begin{center}
-    %\includegraphics[width=0.5\textwidth]{img/av-tabla-contraste.png}
+    %\includegraphics[width=0.5\textwidth]{img/example.png}
   %\end{center}
-  %\caption{Algoritmo Voraz. Tabla de tiempos de ejecución contraste de estudio teórico y experimental.}
+  %\caption{The figure label.}
 %\end{figure}
 
-% Insert code #1:
+% How to insert code #1:
 %\begin{figure}[H]
-%\lstinputlisting{psc/705/AlgoritmoVoraz.psc}
-%\caption{Pseudocódigo Algoritmo Voraz.}
+%\lstinputlisting{src/example.js}
+%\caption{The figure label.}
 %\end{figure}
 
-% Insert code #2:
+% How to insert code #1:
 % \begin{figure}[H]
-% \cbp{src/P2.sql}{1}{35}
-% \caption{Creación de la base de datos (Parte 1)}
+% \cbp{src/example.js}{1}{35}
+% \caption{The figure label.}
 % \end{figure}
 
 \chapter{Chapter}
