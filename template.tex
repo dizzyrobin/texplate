@@ -33,7 +33,7 @@
 \newcommand{\texgroup}{Grupo 3.x}
 \newcommand{\texauthor}{Pedro Javier Nicol\'as Zamora}
 \newcommand{\texemail}{pedrojavier.nicolas@um.es}
-\newcommand{\texnif}{40224983\textit{S}}
+\newcommand{\texnif}{49224983\textit{S}}
 
 % LaTeX metadata
 \title{\textitle}
@@ -75,8 +75,10 @@
   showspaces=false,
   showstringspaces=false,
   captionpos=b,
-  aboveskip=32pt,
-  belowskip=16pt
+  aboveskip=2\baselineskip,
+  belowskip=2\baselineskip,
+  belowcaptionskip=0\baselineskip,
+  abovecaptionskip=1\baselineskip
 }
 
 \lstdefinelanguage{javascript}{
@@ -89,6 +91,7 @@
   morecomment=[s]{/*}{*/},
   morestring=[b]',
   morestring=[b]",
+  morestring=[b]`,
 }
 
 % Make the chapters look good
@@ -167,7 +170,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis diam n
 
 Mauris sagittis urna ut purus bibendum, ac fermentum metus interdum. Duis ante turpis, efficitur et suscipit id, venenatis vitae lorem. Curabitur felis eros, dictum ac massa et, sagittis eleifend elit. Aliquam erat volutpat. Maecenas dictum ante metus, vitae tristique sem venenatis id. Nullam vehicula est tortor. Fusce consectetur nunc et nisl pharetra bibendum. Etiam convallis ligula a malesuada mattis. Maecenas ut massa est. Suspendisse potenti. Suspendisse potenti.
 
-\begin{lstlisting}[language=javascript, caption=Code caption]
+\begin{lstlisting}[language=javascript, caption=Code caption.]
 const hello = "world"; // Example of code
 \end{lstlisting}
 
@@ -175,22 +178,33 @@ Pellentesque eu sagittis libero, ac tincidunt magna. Quisque ac sollicitudin nul
 
 Nunc blandit, arcu et aliquam feugiat, nunc orci sodales urna, eget cursus ante ipsum at orci. Curabitur non quam a neque vehicula efficitur nec nec urna. Donec elementum orci et leo semper auctor. Nullam ultrices elit nec ligula finibus, vel porta odio fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec viverra eros. Phasellus purus erat, tempus nec ex sit amet, dictum auctor nulla. Donec eget dignissim arcu. Maecenas eu nunc justo. Ut tincidunt tellus eros, vitae volutpat diam maximus et. Cras non metus placerat, molestie magna id, dictum libero.
 
+\begin{figure}[H]
+  \vspace{1\baselineskip}
+  \begin{center}
+    \includegraphics[width=0.6\textwidth]{example.png}
+    \caption{Figure caption.}
+  \end{center}
+\end{figure}
+
 Suspendisse massa ligula, suscipit in risus nec, posuere condimentum magna. Praesent auctor tempus porta. Ut feugiat elementum turpis dictum vehicula. Nullam at dolor quis nunc tempor dictum at auctor erat. In sit amet orci at nunc commodo semper eu ut libero. Morbi tempus finibus imperdiet. Phasellus sodales tortor ligula, id mattis risus interdum a.
+
+\lstinputlisting[language=javascript, caption=Code caption.]{example.js}
 
 \end{document}
 
 % How to insert an image:
-%\begin{figure}[H]
-  %\begin{center}
-    %\includegraphics[width=0.5\textwidth]{img/example.png}
-  %\end{center}
-  %\caption{The figure label.}
-%\end{figure}
+% \begin{figure}[H]
+%   \vspace{1\baselineskip}
+%   \begin{center}
+%     \includegraphics[width=0.6\textwidth]{example.png}
+%     \caption{Figure caption.}
+%   \end{center}
+% \end{figure}
 
 % How to insert code from file:
-%\lstinputlisting[language=javascript, caption=Code caption]{example.js}
+% \lstinputlisting[language=javascript, caption=Code caption.]{example.js}
 
 % How to insert code:
-%\begin{lstlisting}[language=javascript, caption=Code caption]
-%const hello = "world"; // Example of code
-%\end{lstlisting}
+% \begin{lstlisting}[language=javascript, caption=Code caption.]
+% const hello = "world"; // Example of code
+% \end{lstlisting}
