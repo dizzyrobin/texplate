@@ -5,4 +5,6 @@ template.toc
 template.aux
 template.fdb_latexmk
 template.out
+template.lof
+template.lol
 

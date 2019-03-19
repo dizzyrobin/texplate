@@ -6,18 +6,23 @@
 \usepackage[utf8]{inputenc}
 \usepackage{mathtools}
 \usepackage[left=2.5cm,top=2.5cm,right=2.5cm,bottom=2.5cm]{geometry}
-\usepackage{relsize}
-\usepackage{float}
 \usepackage{listings}
 \usepackage{color}
 \usepackage{enumitem}
+\usepackage[]{hyperref}
+\usepackage{textcomp}
+\usepackage{relsize}
+\usepackage{float}
 \usepackage{blindtext}
 \usepackage{amsmath}
 \usepackage{fixltx2e}
-\usepackage[]{hyperref}
+\usepackage{microtype}
 
 \selectlanguage{spanish}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{gray}{rgb}        {0.50, 0.50, 0.50}
+\definecolor{colorString}{rgb} {0.90, 0.00, 0.00}
+\definecolor{colorComment}{rgb}{0.00, 0.50, 0.00}
+\definecolor{colorKeyword}{rgb}{0.13, 0.13, 1.00}
 
 % Define vars
 \newcommand{\textitle}{Título de la memoria}
@@ -26,10 +31,17 @@
 \newcommand{\texmonth}{Enero}
 \newcommand{\texdate}{1 de Enero del 2019}
 \newcommand{\texgroup}{Grupo 3.x}
+\newcommand{\texauthor}{Pedro Javier Nicol\'as Zamora}
+\newcommand{\texemail}{pedrojavier.nicolas@um.es}
+\newcommand{\texnif}{40224983\textit{S}}
 
+% LaTeX metadata
+\title{\textitle}
+\author{\texauthor}
+\date{\texdate}
 \hypersetup{
   pdftitle={\textitle}
-  pdfauthor={Pedro Javier Nicol\'as Zamora},
+  pdfauthor={\texauthor},
   pdfsubject={documentation},
   bookmarksnumbered=true,
   bookmarksopen=true,
@@ -40,9 +52,11 @@
   pdfpagelayout=TwoPageRight
 }
 
+% Custom commands
 \newcommand{\cbp}[3]{\lstinputlisting[firstline=#2, lastline=#3, firstnumber=#2]{#1}}
-%\cbp{FILE}{FIRSTLINE}{LASTLINE}
+% Usage: \cbp{FILE}{FIRSTLINE}{LASTLINE}
 
+% Listing config
 \lstset{
   frame=single,
   extendedchars=true,
@@ -51,9 +65,33 @@
   postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}},
   numbers=left,
   basicstyle=\footnotesize,
-  numberstyle=\tiny\color{gray}
+  numberstyle=\tiny\color{gray},
+  literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1,
+  upquote=true,
+  commentstyle=\color{colorComment},
+  keywordstyle=\color{colorKeyword}\bfseries,
+  stringstyle=\color{colorString},
+  basicstyle=\ttfamily,
+  showspaces=false,
+  showstringspaces=false,
+  captionpos=b,
+  aboveskip=32pt,
+  belowskip=16pt
 }
 
+\lstdefinelanguage{javascript}{
+  keywords={const, let, typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+}
+
+% Make the chapters look good
 \makeatletter
 \def\@makechapterhead#1{%
   \vspace*{50\p@}%
@@ -64,16 +102,18 @@
   }}
 \makeatother
 
-\title{\textitle}
-\author{Pedro Javier Nicol\'as Zamora}
+% Some space between paragraphs
+\setlength{\parskip}{8pt}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BEGIN DOCUMENT               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-% cuerpo del documento
 
 \begin{titlepage}
 \begin{center}
-\begin{figure}[htb]
-\end{figure}
 \begin{Huge}
 \textbf{Universidad de Murcia}\\
 \end{Huge}
@@ -88,15 +128,14 @@ Curso \texyear\ - Convocatoria de \texmonth \\
 \begin{Huge}
 \textbf{\textitle} \\
 \end{Huge}
-\vspace*{10cm}
+\vspace*{\fill}
 \rule{80mm}{0.1mm}\\
 \vspace*{0.5cm}
 \begin{Large}
 
-  % Me
-Pedro Javier Nicolás Zamora\\
-49224983\textit{S}\ \ \ \ \\
-pedrojavier.nicolas@um.es\\
+\texauthor\\
+\texnif\\
+\texemail\\
 
 \vspace*{0.5cm}
 \texgroup \\
@@ -110,9 +149,35 @@ pedrojavier.nicolas@um.es\\
 \tableofcontents
 \pagebreak
 
-%\listoffigures
-%\pagebreak
+% \listoffigures
+% \pagebreak
 
+% \lstlistoflistings
+% \pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BEGIN CHAPTERS               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Chapter}
+\section{Section}
+\subsection{Subsection}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis diam non nulla sodales tempus ac vel justo. Mauris sodales leo volutpat nunc pretium, id scelerisque arcu tristique. Maecenas pellentesque leo vitae nulla bibendum mattis. Nullam dapibus erat ex, et condimentum odio lacinia et. Suspendisse sollicitudin scelerisque erat sed euismod. Sed gravida magna nec nunc finibus vestibulum. Aliquam tempor, risus sit amet dapibus lobortis, arcu sem elementum magna, et ullamcorper nisi tellus vel ligula. Maecenas dui tortor, vulputate in mi a, iaculis aliquam nunc. Cras eleifend felis lectus, vitae suscipit metus sodales at.
+
+Mauris sagittis urna ut purus bibendum, ac fermentum metus interdum. Duis ante turpis, efficitur et suscipit id, venenatis vitae lorem. Curabitur felis eros, dictum ac massa et, sagittis eleifend elit. Aliquam erat volutpat. Maecenas dictum ante metus, vitae tristique sem venenatis id. Nullam vehicula est tortor. Fusce consectetur nunc et nisl pharetra bibendum. Etiam convallis ligula a malesuada mattis. Maecenas ut massa est. Suspendisse potenti. Suspendisse potenti.
+
+\begin{lstlisting}[language=javascript, caption=Code caption]
+const hello = "world"; // Example of code
+\end{lstlisting}
+
+Pellentesque eu sagittis libero, ac tincidunt magna. Quisque ac sollicitudin nulla. Nullam id urna sed sem venenatis aliquam at faucibus massa. Nullam ultrices nisl id massa posuere, in euismod lacus mattis. Praesent sem nulla, euismod pretium mi ac, condimentum imperdiet velit. Vestibulum non ornare ipsum, dapibus auctor tortor. Nullam ac varius elit. Sed finibus neque tortor, quis vehicula dolor lobortis nec. Nunc porttitor metus id mi sodales, ut fermentum ex congue. Vestibulum a rhoncus turpis. Integer ante lacus, dictum vel purus nec, scelerisque rhoncus elit. Sed vestibulum erat elit, a rhoncus lorem congue malesuada.
+
+Nunc blandit, arcu et aliquam feugiat, nunc orci sodales urna, eget cursus ante ipsum at orci. Curabitur non quam a neque vehicula efficitur nec nec urna. Donec elementum orci et leo semper auctor. Nullam ultrices elit nec ligula finibus, vel porta odio fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec viverra eros. Phasellus purus erat, tempus nec ex sit amet, dictum auctor nulla. Donec eget dignissim arcu. Maecenas eu nunc justo. Ut tincidunt tellus eros, vitae volutpat diam maximus et. Cras non metus placerat, molestie magna id, dictum libero.
+
+Suspendisse massa ligula, suscipit in risus nec, posuere condimentum magna. Praesent auctor tempus porta. Ut feugiat elementum turpis dictum vehicula. Nullam at dolor quis nunc tempor dictum at auctor erat. In sit amet orci at nunc commodo semper eu ut libero. Morbi tempus finibus imperdiet. Phasellus sodales tortor ligula, id mattis risus interdum a.
+
+\end{document}
 
 % How to insert an image:
 %\begin{figure}[H]
@@ -122,24 +187,10 @@ pedrojavier.nicolas@um.es\\
   %\caption{The figure label.}
 %\end{figure}
 
-% How to insert code #1:
-%\begin{figure}[H]
-%\lstinputlisting{src/example.js}
-%\caption{The figure label.}
-%\end{figure}
+% How to insert code from file:
+%\lstinputlisting[language=javascript, caption=Code caption]{example.js}
 
-% How to insert code #1:
-% \begin{figure}[H]
-% \cbp{src/example.js}{1}{35}
-% \caption{The figure label.}
-% \end{figure}
-
-\chapter{Chapter}
-\section{Section}
-\subsection{Subsection}
-
-Hello world!
-
-
-
-\end{document}
+% How to insert code:
+%\begin{lstlisting}[language=javascript, caption=Code caption]
+%const hello = "world"; // Example of code
+%\end{lstlisting}
